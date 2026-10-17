@@ -22,6 +22,8 @@
 
 ### Other Changes
 
+- Removed a stale `insecure_domain_change` pop from the internal challenge authentication policy. This line attempted to clear a flag from `request.context.options`, but [#45518](https://github.com/Azure/azure-sdk-for-python/pull/45518) moved the flag to `request.context` directly, making the pop a no-op. This internal cleanup brings the Key Vault packages in line with `azure-core`.
+
 ## 1.0.0b3 (2026-08-26)
 
 ### Features Added
